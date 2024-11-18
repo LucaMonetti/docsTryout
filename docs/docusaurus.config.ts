@@ -13,7 +13,7 @@ const config: Config = {
 	url: "https://LucaMonetti.github.io",
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
-	baseUrl: "/",
+	baseUrl: "/docsTryout/",
 
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
@@ -39,6 +39,7 @@ const config: Config = {
 			{
 				docs: {
 					sidebarPath: "./sidebars.ts",
+					exclude: ["**/private/**"],
 				},
 				theme: {
 					customCss: "./src/css/custom.css",
@@ -59,14 +60,9 @@ const config: Config = {
 			items: [
 				{
 					type: "docSidebar",
-					sidebarId: "tutorialSidebar",
+					sidebarId: "aumaticSidebar",
 					position: "left",
-					label: "Docs",
-				},
-				{
-					href: "https://github.com/LucaMonetti/docsTryout",
-					label: "GitHub",
-					position: "right",
+					label: "Documentazione",
 				},
 			],
 		},

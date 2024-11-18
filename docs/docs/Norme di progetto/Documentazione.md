@@ -1,5 +1,0 @@
-# Titolo
-
-Testo
-
--   elenco
