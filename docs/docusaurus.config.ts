@@ -68,35 +68,35 @@ const config: Config = {
 		},
 		footer: {
 			style: "dark",
-			links: [
-				{
-					title: "Docs",
-					items: [
-						{
-							label: "Docs",
-							to: "/docs/intro",
-						},
-					],
-				},
-				{
-					title: "Community",
-					items: [
-						{
-							href: "https://github.com/LucaMonetti/docsTryout",
-							label: "GitHub",
-						},
-					],
-				},
-				{
-					title: "More",
-					items: [
-						{
-							href: "https://github.com/LucaMonetti/docsTryout",
-							label: "GitHub",
-						},
-					],
-				},
-			],
+			// links: [
+			// 	{
+			// 		title: "Docs",
+			// 		items: [
+			// 			{
+			// 				label: "Docs",
+			// 				to: "/docs/intro",
+			// 			},
+			// 		],
+			// 	},
+			// 	{
+			// 		title: "Community",
+			// 		items: [
+			// 			{
+			// 				href: "https://github.com/LucaMonetti/docsTryout",
+			// 				label: "GitHub",
+			// 			},
+			// 		],
+			// 	},
+			// 	{
+			// 		title: "More",
+			// 		items: [
+			// 			{
+			// 				href: "https://github.com/LucaMonetti/docsTryout",
+			// 				label: "GitHub",
+			// 			},
+			// 		],
+			// 	},
+			// ],
 			copyright: `Copyright © ${new Date().getFullYear()} TechWave Docs, Inc. Built with Docusaurus.`,
 		},
 		prism: {
