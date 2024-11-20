@@ -18,17 +18,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
+          
       - name: List directory contents for debugging
         run: ls -la docs  # This will show the contents of the 'docs' folder
 
       - name: Show PWD
         run: pwd
-
+          
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          
       - name: Install dependencies
         run: npm ci
 
