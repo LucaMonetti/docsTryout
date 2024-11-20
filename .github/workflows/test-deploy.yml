@@ -20,7 +20,16 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: List directory contents for debugging
+        run: ls -la docs  # This will show the contents of the 'docs' folder
+
+      - name: Show PWD
+        run: pwd
+
       - name: Install dependencies
-        run: npm ci --prefix docs
+        run: npm ci
+        working-directory: docs  # Set working directory to 'docs' folder
+
       - name: Test build website
-        run: npm run build --prefix docs
+        run: npm run build
+        working-directory: docs  # Ensure the build is run from the 'docs' folder
