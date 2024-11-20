@@ -9,6 +9,8 @@ In questa pagina sono contenuti tutti i verbali esterni prodotti durante la prim
 
 ## Lista verbali
 
+Un esempio di modifica.
+
 Qui è possibile trovari i link ai pdf di ogni incontro suddiviso per azienda:
 
 ### BlueWind
