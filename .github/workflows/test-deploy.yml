@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          working-directory: docs
 
       - name: List directory contents for debugging
         run: ls -la docs  # This will show the contents of the 'docs' folder
