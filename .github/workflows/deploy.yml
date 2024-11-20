@@ -7,6 +7,11 @@ on:
     paths:
       - "docs/**"
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     name: Build Docusaurus
@@ -37,7 +42,7 @@ jobs:
         with:
           path: docs/build
 
-  deploy:
+  commit:
     name: Deploy to GitHub Pages
     needs: build
 
@@ -46,13 +51,21 @@ jobs:
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
 
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+    
+      - name: Commit and Push to Develop Branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch
+          git checkout gh-pages
+          git add build/
+          git commit -m "[feat] Update Docs"
+          git push origin gh-pages
