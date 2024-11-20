@@ -29,6 +29,9 @@ jobs:
       - name: Build website
         run: npm run build
 
+      - name: Debug
+        run: ls -la
+
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
