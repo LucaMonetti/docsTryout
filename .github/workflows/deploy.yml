@@ -11,6 +11,9 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,9 +22,10 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: "docs/package-lock.json"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build website
         run: npm run build
 
