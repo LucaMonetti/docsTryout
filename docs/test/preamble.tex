@@ -1,0 +1,54 @@
+\title{Titolo}
+
+\editor{Carraro Agnese}
+\editor{Marcon Giulia}
+\editor{Pistori Gaia}
+\editor{Vasquez Manuel Felipe}
+
+\reviewer{Monetti Luca}
+\reviewer{Piola Andrea}
+\reviewer{Dal Bianco Riccardo}
+\classification{Esterno}
+\version{1.0}
+
+% \renewcommand{\maketitle}{\frontmatter}
+
+\renewcommand{\maketitle}{%
+\newgeometry{left=3.5cm, right=3.5cm}% Ensure geometry is changed
+\begin{titlepage}
+    \begin{center}
+        % Adjust images
+        \raisebox{1cm}{\includegraphics[height=3cm]{logo_unipd.png}}%
+        \hspace{0.5cm}%
+        \raisebox{0cm}{\includegraphics[height=5cm]{logo.png}}%
+
+        \vspace{1cm}
+        \small\textcolor{darkgray}{techwave.unipd@gmail.com}
+
+        \vspace{0.5cm}
+        \huge\textbf{\@title}%
+    \end{center}
+
+    \vspace{2cm}
+
+    % Document details - use proper spacing and ensure macros are defined
+    \noindent\parbox{\textwidth}{\@labeltext{Redatto da:} \@LabelValue{\editorlist}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Revisionato da:} \@LabelValue{\reviewerlist}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Durata riunione:} \@LabelValue{\@duration}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Classificazione:} \@LabelValue{\@classification}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Versione:} \@LabelValue{\@version}}%
+\end{titlepage}
+\restoregeometry % Restore original geometry
+}

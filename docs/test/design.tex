@@ -1,0 +1,279 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{TWDocumentFull}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Web Design},
+            pdfauthor={Luca Monetti},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\title{Titolo}
+
+\editor{Carraro Agnese}
+\editor{Marcon Giulia}
+\editor{Pistori Gaia}
+\editor{Vasquez Manuel Felipe}
+
+\reviewer{Monetti Luca}
+\reviewer{Piola Andrea}
+\reviewer{Dal Bianco Riccardo}
+\classification{Esterno}
+\version{1.0}
+
+% \renewcommand{\maketitle}{\frontmatter}
+
+\renewcommand{\maketitle}{%
+\newgeometry{left=3.5cm, right=3.5cm}% Ensure geometry is changed
+\begin{titlepage}
+    \begin{center}
+        % Adjust images
+        \raisebox{1cm}{\includegraphics[height=3cm]{logo_unipd.png}}%
+        \hspace{0.5cm}%
+        \raisebox{0cm}{\includegraphics[height=5cm]{logo.png}}%
+
+        \vspace{1cm}
+        \small\textcolor{darkgray}{techwave.unipd@gmail.com}
+
+        \vspace{0.5cm}
+        \huge\textbf{\@title}%
+    \end{center}
+
+    \vspace{2cm}
+
+    % Document details - use proper spacing and ensure macros are defined
+    \noindent\parbox{\textwidth}{\@labeltext{Redatto da:} \@LabelValue{\editorlist}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Revisionato da:} \@LabelValue{\reviewerlist}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Durata riunione:} \@LabelValue{\@duration}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Classificazione:} \@LabelValue{\@classification}}%
+
+    \vspace{0.5em}
+
+    \noindent\parbox{\textwidth}{\@labeltext{Versione:} \@LabelValue{\@version}}%
+\end{titlepage}
+\restoregeometry % Restore original geometry
+}
+
+\title{Web Design}
+\author{Luca Monetti}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{design}{%
+\section{Design}\label{design}}
+
+\hypertarget{architettura-dellinformazione}{%
+\subsection{Architettura
+dell'informazione}\label{architettura-dellinformazione}}
+
+Come si organizzano, archiviano e ricercano Informazioni.
+
+Elementi principali:
+
+\begin{itemize}
+\tightlist
+\item
+  Contesto: Fondamentale. Può modificare l'aspettativa dell'utente.
+\item
+  Contenuto
+\item
+  Utenti
+\end{itemize}
+
+L'utente non deve sentirsi \textbf{perso} all'interno del sito:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Domanda & Risposta\tabularnewline
+\midrule
+\endhead
+Dove sono? & Presenza di Breadcrumb\tabularnewline
+\bottomrule
+\end{longtable}
+
+La presenza di una mappa del sito rappresenta una metrica: Se tante
+persone accedono alla pagina il mio sito non è chiaro. Non dovrebbe
+essere necessario accedere alla mappa per capire dove devo andare.
+
+\textbf{Non è uno strumento di orientamento}
+
+\hypertarget{problemi-dellorganizzazione-dellinformazione}{%
+\subsubsection{Problemi dell'organizzazione
+dell'informazione}\label{problemi-dellorganizzazione-dellinformazione}}
+
+Possibile utilizzare diversi schemi, alcuni ambigui, altri meno.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Schemi Metaforici}: Possono essere più o meno comprendibili.
+\item
+  \textbf{Strutture Organizzative}: Le principali sono 4:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sequenza
+  \item
+    Gerarchia
+  \item
+    A matrice
+  \item
+    Ipertesto
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{legge-di-hick}{%
+\paragraph{Legge di HIck}\label{legge-di-hick}}
+
+Il tempo necessario per compiere una scelta non dipende dal numero di
+scelte ma da come sono presentate.
+
+\begin{itemize}
+\tightlist
+\item
+  Se rieco ad organizzare il menù secondo un ordine comodo per l'utente
+  strutture ampie sono preferibili rispetto a quelle profonde
+\item
+  Altrimenti:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Più livelli coerenti
+  \item
+    Personalizzare il menù mostrando solo una parte delle scelte
+    possibili.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{comportamento-degli-utenti}{%
+\subsection{Comportamento degli
+utenti}\label{comportamento-degli-utenti}}
+
+Caso migliore:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  L'utente pone una domanda
+\item
+  Ricerca / Naviga
+\item
+  L'utente riceve una risposta
+\item
+  Fine della ricerca
+\end{enumerate}
+
+Gli utenti spesso non sanno cosa vogliono. Terminano spesso la ricerca
+con insuccesso.
+
+\hypertarget{metafora-della-pesca}{%
+\subsubsection{Metafora della pesca}\label{metafora-della-pesca}}
+
+Gli utenti vengono paragonati a dei pescatori:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+Nome\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+Tipo Utente\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+Risposta\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Tiro perfetto\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+L'utente sa cosa sta cercando\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Barra di ricerca\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Trappola per aragoste\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+L'utente non ha un'idea precisa, impara nel percoso. Processo
+esplorativo\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Barra di navigazione. Chatbot.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Pesca con la rete\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+L'utente vuole esplorare tutto all'interno di un argomento\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+/\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Boa di segnalazione\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+L'utente vuole ritrovare un elemento\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Bookmark del browser. Wishlist.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}
