@@ -13,7 +13,42 @@ permissions:
   id-token: write
 
 jobs:
+
+  build-pdf:
+    name: Build Pdfs
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update && \
+          sudo apt-get install -y texlive-base texlive-lang-italian texlive-fonts-recommended texlive-latex-extra
+
+      - name: Identify modified .tex files
+        id: modified-files
+        run: |
+          git diff --name-only HEAD^ HEAD | grep '^docs/.*\.md$' | sed 's|^docs/||' > modified_files.txt || true
+
+      - uses: pandoc/actions/setup@v1
+        with:
+            version: 3.5
+            
+      - name: Compile PDF
+        run: |
+            ./compile-pdf.sh
+            
+      - name: Debug
+        run: | 
+          ls -la
+          ls -la docs
+
   build:
+    needs: build-pdf
     name: Build Docusaurus
     runs-on: ubuntu-latest
     defaults:
