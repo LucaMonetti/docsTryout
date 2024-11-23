@@ -21,5 +21,5 @@ classification: Esterno
 
 Questo file contiene tutti i casi d'uso.
 
-- Primo caso.
-- Secondo caso.
+- Primo caso
+- Secondo caso
