@@ -40,7 +40,7 @@ jobs:
             
       - name: Compile PDF
         run: |
-            xargs ./compile-pdf.sh < union_folders.txt
+            ./compile-pdf.sh
             
       - name: Debug
         run: | 
@@ -89,6 +89,10 @@ jobs:
   commit:
     name: Deploy to GitHub Pages
     needs: build
+
+    permissions:
+      pages: write 
+      id-token: write 
 
     environment:
       name: github-pages
