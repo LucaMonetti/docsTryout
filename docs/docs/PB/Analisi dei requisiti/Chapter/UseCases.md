@@ -23,3 +23,4 @@ Questo file contiene tutti i casi d'uso.
 
 - Primo caso
 - Secondo caso
+- %%Attore|attore%%

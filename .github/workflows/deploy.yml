@@ -43,12 +43,13 @@ jobs:
           npm run docusaurus glossary
           ls -la
           cat ./docs/RTB/Glossario.md
+          rm -rf node_modules
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: complete_source
-          path: ./
+          path: ../
 
   build-pdf:
     needs: create-glossary
