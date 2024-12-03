@@ -44,6 +44,11 @@ jobs:
           ls -la
           cat ./docs/RTB/Glossario.md
           rm -rf node_modules
+      
+      - name: Identify modified .tex files
+        id: modified-files
+        run: |
+          git diff --name-only HEAD^ HEAD | grep '^docs/.*\.md$' | sed 's|^docs/||' > modified_files.txt || true
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
@@ -68,11 +73,6 @@ jobs:
         run: |
           sudo apt-get update && \
           sudo apt-get install -y texlive-base texlive-lang-italian texlive-fonts-recommended texlive-latex-extra
-
-      - name: Identify modified .tex files
-        id: modified-files
-        run: |
-          git diff --name-only HEAD^ HEAD | grep '^docs/.*\.md$' | sed 's|^docs/||' > modified_files.txt || true
 
       - uses: pandoc/actions/setup@v1
         with:
