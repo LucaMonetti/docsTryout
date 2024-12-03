@@ -26,6 +26,6 @@ Di seguito verranno mostrati tutti i documenti prodotti durante lo svolgimento d
 
 Nella _sidebar_ è possibile individuare tutti i link ai vari documento organizzati in:
 
-- **Candidatura:** Tutti i documenti prodotti dall'inizio del progetto alla fase di accettazione della candidatura.
-- **RTB:** Tutti i documenti prodotti prima della _Requirements & Technology Baseline_, la prima tappa del progetto che prevede la consegna di un PoC del prodotto finale
+- **Candidatura:** Tutti i documenti prodotti dall'inizio del progetto alla fase di accettazione della candidatura..
+- **RTB:** Tutti i documenti prodotti prima della _Requirements & Technology Baseline_, la prima tappa del progetto che prevede la consegna di un %%PoC|poc%% del prodotto finale
 - **PB:** Tutti i documenti prodotti prima della _Project Baseline_, la seconda tappa del progetto che prevede la consegna del prodotto realizzato.
