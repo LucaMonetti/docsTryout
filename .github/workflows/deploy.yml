@@ -80,6 +80,7 @@ jobs:
             
       - name: Compile PDF
         run: |
+            chmod +x ./compile-pdf.sh
             ./compile-pdf.sh
             
       - name: Debug
