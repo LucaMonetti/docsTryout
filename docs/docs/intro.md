@@ -20,7 +20,7 @@ version: 1.0
 
 A cosa serve questa pagina?
 
-Di seguito verranno mostrati tutti i documenti prodotti durante lo svolgimento del progetto di IS ( Ingegneria del Software ) del gruppo 5 TechWave.
+Di seguito verranno mostrati tutti i documenti prodotti durante lo svolgimento del progetto di %%SWE|swe%% ( Ingegneria del Software ) del gruppo 5 TechWave.
 
 ## Organizzazione
 
