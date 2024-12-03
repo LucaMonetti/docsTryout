@@ -19,4 +19,4 @@ classification: Esterno
 
 # Analisi dei Requisiti
 
-Questo file contiene l'analisi dei requisiti fatta dal gruppo 5 per il progetto di SWE.
+Questo file contiene l'analisi dei requisiti fatta dal gruppo 5 per il progetto di %%SWE|swe%%.

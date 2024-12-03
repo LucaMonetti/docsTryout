@@ -48,6 +48,17 @@ const config: Config = {
 		],
 	],
 
+	plugins: [
+		[
+			"@lunaticmuch/docusaurus-terminology",
+			{
+				termsDir: "./docs/RTB/Termini",
+				termsUrl: "/docs/RTB/Termini",
+				glossaryFilepath: "./docs/RTB/Glossario.md",
+			}
+		],
+	],
+
 	themeConfig: {
 		// Replace with your project's social card
 		image: "img/logo.png",
