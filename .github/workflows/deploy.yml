@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: complete_source
-          path: ../
+          path: ${{ github.workspace }}
 
   build-pdf:
     needs: create-glossary
